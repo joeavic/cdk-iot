@@ -1,5 +1,6 @@
 import { Stack, StackProps } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
+import { aws_iot as iot } from 'aws-cdk-lib';
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
 
 export class TestStack extends Stack {
@@ -12,5 +13,17 @@ export class TestStack extends Stack {
     // const queue = new sqs.Queue(this, 'TestQueue', {
     //   visibilityTimeout: cdk.Duration.seconds(300)
     // });
+    // The code below shows an example of how to instantiate this type.
+    // The values are placeholders you should change.
+    const cfnCertificate = new iot.CfnCertificate(this, 'MyCfnCertificate', {
+	      status: 'status',
+
+	        // the properties below are optional
+		  caCertificatePem: 'caCertificatePem',
+		    certificateMode: 'certificateMode',
+		      certificatePem: 'certificatePem',
+		        certificateSigningRequest: 'certificateSigningRequest',
+    });
+ 
   }
 }
