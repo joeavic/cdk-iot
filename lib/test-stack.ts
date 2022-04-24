@@ -16,14 +16,11 @@ export class TestStack extends Stack {
     // The code below shows an example of how to instantiate this type.
     // The values are placeholders you should change.
     const cfnCertificate = new iot.CfnCertificate(this, 'MyCfnCertificate', {
-	      status: 'status',
-
-	        // the properties below are optional
-		  caCertificatePem: 'caCertificatePem',
-		    certificateMode: 'certificateMode',
-		      certificatePem: 'certificatePem',
-		        certificateSigningRequest: 'certificateSigningRequest',
-    });
+	      status: 'ACTIVE',
+              certificateMode: 'DEFAULT',
+              certificatePem: '',
+	      caCertificatePem : ''
+ });
  
   }
 }
