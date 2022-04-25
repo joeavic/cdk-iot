@@ -9,17 +9,13 @@ export class TestStack extends Stack {
 
     // The code that defines your stack goes here
 
-    // example resource
-    // const queue = new sqs.Queue(this, 'TestQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
-    // The code below shows an example of how to instantiate this type.
-    // The values are placeholders you should change.
+    // certificateSigningRequest -> Generate this on the device using th e below command
+    // sudo openssl req -new -newkey rsa:2048 -nodes -keyout test.com.key -out test.com.csr
+    // paste the content of the test.com.csr file in certificateSigningRequest parameter as a String
     const cfnCertificate = new iot.CfnCertificate(this, 'MyCfnCertificate', {
 	      status: 'ACTIVE',
               certificateMode: 'DEFAULT',
-              certificatePem: '',
-	      caCertificatePem : ''
+	     certificateSigningRequest: ''
  });
  
   }
